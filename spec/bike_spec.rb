@@ -3,6 +3,7 @@ require_relative '../lib/bike'
 describe Bike do
 
 	let(:bike) { Bike.new }
+	# == ( bike = Bike.new ) every time bike is called in the test
 
 	# this is a specific feature - or behaveiour
 	# that we EXPECT to have

@@ -1,4 +1,5 @@
 require_relative '../lib/docking_station'
+require_relative '../lib/bike'
 
 describe DockingStation do
 	let(:bike) { Bike.new }
@@ -36,6 +37,16 @@ describe DockingStation do
 		station.dock(broken_bike)
 		expect(station.available_bikes).to eq([working_bike])
 	end
+
+	it 'should not release a bike if it is broken' do
+		broken_bike = Bike.new
+		broken_bike.break
+		expect { station.release(broken_bike.broken?) }.to be false
+
+	end
+
+
+
 
 
 end
